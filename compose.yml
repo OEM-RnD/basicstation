@@ -5,7 +5,9 @@ services:
     build: ./basicstation
     container_name: basicstation
     restart: unless-stopped
-    privileged: true
 
     volumes:
       - ./config:/basicstation/config:ro
+
+    devices:
+      - /dev/ttyACM0:/dev/ttyACM0
